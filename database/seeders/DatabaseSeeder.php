@@ -67,6 +67,7 @@ class DatabaseSeeder extends Seeder
                 'category_id' => Category::inRandomOrder()->first()->id,
                 'material_id' => Material::inRandomOrder()->first()->id,
                 'condition_id' => Condition::inRandomOrder()->first()->id,
+                'color_id' => Condition::inRandomOrder()->first()->id,
             ]);
 
             // Create likes and dislikes
