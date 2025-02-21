@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Chat;
+use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -62,6 +64,30 @@ class AuthController extends Controller
         ]);
 
         self::sendVerificationCode($user);
+
+        $chat = Chat::create([
+            'user1_id' => $user->id,
+            'user2_id' => 1,
+        ]);
+
+        $messages = [
+            "🐾 Hey hey, trade buddy!! It’s me, Truequi! 🐶✨",
+            "I’ve got some pawsome toys up for trade! Wanna check ‘em out? Tap on my cute lil’ face (yep, my profile pic 🐶) and see what I got! 👀🎾",
+            "Like something? Got some cash? Just hit the 🔄 (top right corner) and make me an offer! 💰🎁",
+            "Ohhh, got a toy you wanna swap with me? Sweet! Just go to your profile, hit the ➕ (top corner) to add it, then come back and let’s make a deal! 🤝🐾",
+            "And hey, if you need something else, just head to the main swipe page—use the filters to sniff out exactly what you’re looking for! 🔍✨",
+            "Any questions? Bark at me here! The Trueque Team will fetch you an answer ASAP! 🐶💬",
+            "Happy trading, woof woof! 🚀🎉",
+        ];
+        
+        foreach ($messages as $content) {
+            Message::create([
+                'chat_id' => $chat->id,
+                'user_id' => 1, // Assuming user_id 1 is Truequi
+                'content' => $content,
+                'read' => false,
+            ]);
+        }
 
         return response()->json(['message' => 'User registered successfully.']);
     }
