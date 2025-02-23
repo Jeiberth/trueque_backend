@@ -76,6 +76,7 @@ class AuthController extends Controller
             "Like something? Got some cash? Just hit the 🔄 (top right corner) and make me an offer! 💰🎁",
             "Ohhh, got a toy you wanna swap with me? Sweet! Just go to your profile, hit the ➕ (top corner) to add it, then come back and let’s make a deal! 🤝🐾",
             "And hey, if you need something else, just head to the main swipe page—use the filters to sniff out exactly what you’re looking for! 🔍✨",
+            "🐾Safety First! 🛡️If you see something that makes you uncomfortable, like harmful content or someone under 13, bark at me here! The Trueque Team will investigate ASAP. 🐶🚨",
             "Any questions? Bark at me here! The Trueque Team will fetch you an answer ASAP! 🐶💬",
             "Happy trading, woof woof! 🚀🎉",
         ];
