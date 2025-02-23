@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
-    // Display a listing of the users
     public function index()
     {
         $users = User::all();
